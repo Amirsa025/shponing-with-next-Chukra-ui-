@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 import { store } from '../app/store';
 import {Provider} from "react-redux";
 import { ChakraProvider } from '@chakra-ui/react'
+import { CookiesProvider } from 'react-cookie';
 //Import the extendTheme function
 import { extendTheme } from '@chakra-ui/react'
 //Extend the theme to include custom colors, fonts, etc
@@ -18,7 +19,9 @@ const theme = extendTheme({ colors })
 function MyApp({ Component, pageProps }: AppProps) {
   return<Provider store={store}>
       <ChakraProvider theme={theme}>
-          <Component {...pageProps} />
+          <CookiesProvider>
+              <Component {...pageProps} />
+          </CookiesProvider>
       </ChakraProvider>
       </Provider>
 
