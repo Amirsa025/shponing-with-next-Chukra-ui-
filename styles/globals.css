@@ -24,3 +24,11 @@ a {
     background: black;
   }
 }
+.fieldName{
+  padding:0.5rem;
+  background-color: #fff8f8
+}
+.errorMessages {
+  color: #e10a0a;
+  padding: 1rem 0 ;
+}
